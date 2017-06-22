@@ -1,0 +1,11 @@
+en:
+  error:
+    address_not_found: "Address not found!"
+  form:
+    search_for: "Search for:"
+    submit: "Submit"
+  table:
+    header:
+      address: "Address"
+      latitude: "Latitude"
+      longitude: "Longitude"

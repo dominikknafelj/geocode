@@ -1,0 +1,18 @@
+$(document).ready(function () {
+    var lookUp = function (event) {
+        event.preventDefault();
+        $.ajax({
+            method: 'POST',
+            url: 'lookups/execute',
+            data: $(event.target).serialize()
+        }).done(function (data) {
+            $('#location-table').html(data)
+        }).fail(function (data) {
+            alert(<%= I18n.t('error.address_not_found').inspect %>);
+        }).always(function () {
+            Rails.enableElement(document.querySelector('input[type=submit]'))
+        });
+    }
+
+    $('#lookup-form').submit(lookUp)
+});

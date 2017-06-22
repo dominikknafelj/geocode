@@ -1,0 +1,13 @@
+- if @places
+  %table.table
+    %thread
+      %tr
+        %th= t('table.header.address')
+        %th= t('table.header.latitude')
+        %th= t('table.header.longitude')
+    %tbody
+      - @places.each do |place|
+        %tr
+          %td= place.address
+          %td= place.latitude
+          %td= place.longitude

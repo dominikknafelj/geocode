@@ -1,0 +1,12 @@
+.row
+  .col-md-12.text-center
+    %h1 Geocode
+.row
+  .col-md-12.text-center
+    = form_tag('#', id:'lookup-form') do
+      = label_tag(:query, t('form.search_for'))
+      = text_field_tag(:query, nil, required: true)
+      = submit_tag t('form.submit')
+#location-table.row
+  = render 'table_content'
+  
